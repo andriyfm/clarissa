@@ -32,4 +32,5 @@ function watchTask () {
   )
 }
 
-exports.default = series(watchTask)
+exports.watch = series(watchTask)
+exports.default = series(cleanTask, pugTask, sassTask)
