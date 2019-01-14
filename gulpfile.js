@@ -5,7 +5,7 @@ const clean = require('gulp-clean')
 const image = require('gulp-image')
 
 function cleanTask () {
-  return src('dist/', { read: false })
+  return src('dist/*', { read: false })
     .pipe(clean())
 }
 
