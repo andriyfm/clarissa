@@ -10,9 +10,21 @@ function cleanTask () {
 }
 
 function pugTask () {
-  return src(['src/pug/index.pug', 'src/pug/homepage-standart-01.pug'])
-    .pipe(pug({ pretty: true }))
-    .pipe(dest('dist/'))
+  return src([
+    'src/pug/index.pug',
+    'src/pug/homepage-standart-01.pug',
+    'src/pug/homepage-standart-02.pug',
+    'src/pug/homepage-standart-03.pug',
+    'src/pug/homepage-standart-04.pug',
+    'src/pug/homepage-standart-05.pug',
+    'src/pug/homepage-standart-06.pug',
+    'src/pug/homepage-standart-07.pug',
+    'src/pug/homepage-standart-08.pug',
+    'src/pug/blog-page-standart.pug',
+    'src/pug/blog-post-standart.pug',
+  ])
+  .pipe(pug({ pretty: true }))
+  .pipe(dest('dist/'))
 }
 
 function sassTask () {
@@ -33,9 +45,18 @@ function imageTask () {
       gifsicle: true,
       svgo: true,
       concurrent: 10,
-      // quiet: true // defaults to false
     }))
     .pipe(dest('dist/img/'))
+}
+
+function cssTask () {
+  return src('src/css/**/*.css')
+    .pipe(dest('dist/css/'))
+}
+
+function jsTask () {
+  return src('src/js/**/*.js')
+    .pipe(dest('dist/js/'))
 }
 
 function watchTask () {
@@ -44,9 +65,9 @@ function watchTask () {
       'src/sass/**/*.sass',
       'src/pug/index.pug'
     ],
-    series(cleanTask, imageTask, pugTask, sassTask)
+    series(cleanTask, imageTask, pugTask, sassTask, jsTask, cssTask)
   )
 }
 
 exports.watch = series(watchTask)
-exports.default = series(cleanTask, imageTask, pugTask, sassTask)
+exports.default = series(cleanTask, imageTask, pugTask, sassTask, jsTask, cssTask)
