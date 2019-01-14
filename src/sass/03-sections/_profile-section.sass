@@ -1,0 +1,195 @@
+/* PROFILE-SECTION
+/* ==================================
+#bride-profile-section
+  position: relative
+  overflow: hidden
+
+  // CONTAINER-FLUID
+  // ==================================
+  .container-fluid
+    background: $secondary-color-1-4
+    padding-right: 0
+    padding-left: 0
+
+  // ROW
+  // ==================================
+  .row
+
+  // PROFILE-SECTION-PHOTO
+  // ==================================
+  .profile-section-photo
+    position: absolute
+    top: 50%
+    left: 0
+    transform: translateY(-50%)
+
+    // PROFILE-SECTION-PHOTO [SMALL DEVICE]
+    // ====================================
+    @media(max-width: $sm)
+      display: none !important
+
+    // PROFILE-SECTION-PHOTO [MEDIUM DEVICE]
+    // =====================================
+    @media(max-width: $md)
+      display: none !important
+
+    // PROFILE-SECTION-PHOTO::AFTER
+    // ==================================
+    &::after
+      content: ""
+      +size(100%)
+      background: transparentize($secondary-color-1-4, 0.3)
+      +centering(absolute)
+
+    img
+      width: 600px
+      height: auto
+
+  // PROFILE-SECTION-DETAIL
+  // ==================================
+  .profile-section-detail
+    padding: 0 60px
+
+    // PROFILE-SECTION-DETAIL [SMALL DEVICE]
+    // =====================================
+    @media(max-width: $sm)
+      padding-top: 80px !important
+      padding-bottom: 80px !important
+      padding-left: 30px
+      padding-right: 30px
+
+    // PROFILE-SECTION-DETAIL [MEDIUM DEVICE]
+    // ======================================
+    @media(max-width: $md)
+      padding-top: 100px !important
+      padding-bottom: 100px !important
+      padding-left: 60px
+      padding-right: 60px
+      text-align: center
+
+    // PROFILE-SECTION-DETAIL [LARGE DEVICE]
+    // =====================================
+    @media(max-width: $lg)
+      padding: 0 60px
+      margin-left: 0 !important
+
+  // PROFILE-HEADER
+  // ==================================
+  .profile-section-header
+    margin-bottom: 60px
+    position: relative
+    z-index: 1
+
+  // SECTION-HEADER
+  // ==================================
+  .section-header
+    margin-bottom: 60px
+
+    // SECTION-HEADER > H6
+    // ==================================
+    h6
+      font-family: $font-heading
+      font-size: 30px
+      line-height: 30px
+      color: $secondary-color-1-2
+      margin-bottom: 5px
+
+    // SECTION-HEADER > H2
+    // ==================================
+    h2
+      font-family: $font-base
+      font-weight: 300
+      font-size: 36px
+      line-height: 36px
+      color: $secondary-color-2-1
+      margin: 0
+
+    // SECTION-HEADER > IMG
+    // ==================================
+    img
+      left: 0
+      transform: translate(0, -50%)
+
+      // SECTION-HEADER > IMG [XTRA-SMALL DEVICE]
+      // ========================================
+      @media(max-width: $md)
+        left: 50%
+        transform: translate(-50%, -50%)
+
+
+  // PROFILE-SECTION-BODY
+  // ==================================
+  .profile-section-body
+
+    // PROFILE-SECTION-BODY > P
+    // ==================================
+    p
+      color: $secondary-color-1-2
+      margin-bottom: 20px
+
+      &:last-child
+        margin-bottom: 0
+
+  // PROFILE-SECTION-GALLERY
+  // ==================================
+  .profile-section-gallery
+    padding: 0
+    height: 900px
+
+    // PROFILE-SECTION-GALLERY [MEDIUM DEVICE]
+    // =======================================
+    @media(max-width: $md)
+      order: 2
+
+  // PROFILE-GALLERY
+  // ==================================
+  .profile-gallery-item
+    padding-right: 0
+    overflow: hidden
+    +size(100%, 300px)
+    position: relative
+    z-index: 1
+
+    // PROFILE-GALLERY-ITEM > IMG
+    // ==================================
+    img
+      width: auto
+      height: 100%
+      +centering(absolute)
+      z-index: 2
+
+      @media(max-width: $sm)
+        width: auto !important
+        height: 100% !important
+
+      @media(max-width: $md)
+        width: 100%
+        height: auto
+
+// GROOM-PROFILE
+// ==================================
+#groom-profile-section
+  @extend #bride-profile-section
+
+  // PROFILE-SECTION-PHOTO
+  // ==================================
+  .profile-section-photo
+    position: absolute
+    top: 50%
+    left: inherit
+    right: 0
+    transform: translateY(-50%)
+
+  // PROFILE-SECTION-DETAIL
+  // ==================================
+  .profile-section-detail
+
+    // PROFILE-SECTION-DETAIL [MEDIUM DEVICE]
+    // ======================================
+    @media(max-width: $md)
+      order: 1
+
+    // PROFILE-SECTION-DETAIL [LARGE DEVICE]
+    // =====================================
+    @media(max-width: $lg)
+      margin-right: 0 !important

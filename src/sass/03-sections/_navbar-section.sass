@@ -1,0 +1,158 @@
+/* NAVBAR
+/* ==================================
+.navbar
+  background: $secondary-color-1-2
+  height: 60px
+
+  // NAVBAR [MEDIUM DEVICE]
+  // ==================================
+  @media(max-width: $md)
+    background: $primary-color-1
+    height: inherit
+
+
+  // NAVBAR-BRAND
+  // ==================================
+  .navbar-brand
+
+    // NAVBAR-BRAND:HOVER > IMG
+    // ==================================
+    &:hover > img
+      transform: translateX(10px)
+
+    // NAVBAR-BRAND > IMG
+    // ==================================
+    img
+      width: 100px
+      height: auto
+      transition: $default-transition
+
+// NAVBAR-TOGGLER
+// ==================================
+.navbar-toggler
+  background-image: url('../img/hamburger-icon.svg')
+  background-repeat: no-repeat
+  cursor: pointer
+
+  // NAVBAR-TOGGLER:ACTIVE,
+  // NAVBAR-TOGGLER:FOCUS
+  // ==================================
+  &:active,
+  &:focus
+    outline: 0
+    box-shadow: none
+
+// NAVBAR-SECTION
+// ==================================
+#navbar-section
+
+  // NAVBAR-SECTION [MEDIUM SECTION]
+  // ==================================
+  @media(max-width: $md)
+    padding-top: 15px
+    padding-bottom: 15px
+
+  // NAVBAR-NAV
+  // ==================================
+  .navbar-nav
+
+    // NAVBAR-NAV [MEDIUM DEVICE]
+    // ==================================
+    @media(max-width: $md)
+      align-items: flex-start !important
+
+    // NAVBAR-NAV > .CTA-RSPV:HOVER
+    // ==================================
+    & > .nav-item.cta-rspv:hover
+      background: $primary-color-5
+
+    // NAVBAR-NAV > .CTA-RSPV:HOVER > NAV-LINK::AFTER
+    // ==================================
+    & > .nav-item.cta-rspv:hover > .nav-link::after
+      background: $secondary-color-1-2
+
+  // NAV-ITEM
+  // ==================================
+  .nav-item
+    padding: 0 0.25em
+
+  // NAV-LINK
+  // ==================================
+  .nav-link
+    font-size: 12px
+    font-weight: 700
+    letter-spacing: letterSpacing(80)
+    color: $secondary-color-1-5
+    position: relative
+    transition: $default-transition
+
+    // NAV-LINK:HOVER
+    // ==================================
+    &:hover
+      color: $primary-color-5
+
+    // NAV-LINK:HOVER::AFTER
+    // ==================================
+    &:hover::after
+      width: 20px
+
+    // NAV-LINK::AFTER
+    // ==================================
+    &::after
+      content: ""
+      background: $secondary-color-1-5
+      width: 0
+      height: 2px
+      position: absolute
+      left: 50%
+      transform: translateX(-50%)
+      bottom: 0
+      transition: $default-transition
+
+      // NAV-LINK::AFTER [MEDIUM DEVICE]
+      // ==================================
+      @media(max-width: $md)
+        left: 0
+        transform: translateX(0)
+
+  // CTA-RSPV
+  // ==================================
+  .cta-rspv
+    display: flex
+    justify-content: center
+    flex-direction: column
+    align-items: center
+    background: $secondary-color-1-4
+    text-align: center
+    padding-top: 10px
+    padding-bottom: 10px
+    margin-left: 15px
+    position: relative
+    mask: url("../img/rectangle.svg"), url("../img/elipse.svg"), url("../img/elipse.svg")
+    mask-size: 100%, 20px, 20px
+    mask-composite: source-out
+    mask-repeat: repeat, no-repeat, no-repeat
+    mask-position: 0 0, -10px calc(100% + 10px), calc(100% + 10px) calc(100% + 10px)
+
+    // CTA-RSPV [MEDIUM DEVICE]
+    // ==================================
+    @media(max-width: $md)
+      display: none
+
+    // CTA-RSPV::AFTER
+    // ==================================
+    &::after
+      content: ""
+      +size(calc(100% - 10px))
+      +centering(absolute)
+      top: 35%
+      border: 1px dashed $secondary-color-2-2
+      z-index: -1
+
+    // CTA-RSPV > SPAN
+    // ==================================
+    span
+      line-height: 14px
+      color: $secondary-color-2-2
+      display: block
+      margin: 5px 0

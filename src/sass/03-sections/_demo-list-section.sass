@@ -1,0 +1,110 @@
+/* DEMO-LIST-SECTION
+/* ==================================
+#demo-list-section
+  margin-top: 280px
+  margin-bottom: 60px
+  @media(max-width: $sm)
+    margin-top: 400px
+
+  // CONTAINER
+  // ==================================
+  .container
+    padding-top: 50px
+    border-top: 2px dashed $secondary-color-1-2
+    margin-top: 30px
+    @media(max-width: $sm)
+      border: 0
+
+  // DEMO-ITEM
+  // ==================================
+  .demo-item
+    margin-bottom: 30px
+
+  // DEMO-ITEM-HEAD
+  // ==================================
+  .demo-item-head
+    display: flex
+    justify-content: flex-start
+    align-items: center
+    margin-bottom: 30px
+
+    // DEMO-ITEM-HEAD > NUMBER
+    // ==================================
+    .number
+      +size(50px)
+      border: 2px solid $secondary-color-1-3
+      border-radius: 10px
+      position: relative
+      margin-right: 20px
+
+      // DEMO-ITEM-HEAD > NUMBER > P
+      // ==================================
+      p
+        display: block
+        +centering(absolute)
+        font-size: 20px
+        font-weight: 700
+        line-height: 20
+        letter-spacing: letterSpacing(60)
+        color: $secondary-color-1-4
+
+    // DEMO-ITEM-HEAD > TITLE
+    // ==================================
+    .title
+
+      // DEMO-ITEM-HEAD > TITLE > H6
+      // ==================================
+      h6
+        font-family: $font-base
+        font-size: 12px
+        line-height: 12px
+        letter-spacing: letterSpacing(100)
+        color: $secondary-color-1-3
+        margin-bottom: 5px
+
+      // DEMO-ITEM-HEAD > TITLE > H2
+      // ==================================
+      h2
+        font-family: $font-base
+        font-size: 20px
+        line-height: 20px
+        letter-spacing: letterSpacing(50)
+        color: $primary-color-5
+
+  // DEMO-ITEM-BODY
+  // ==================================
+  .demo-item-body
+    +size(100%, 268px)
+    border: 2px dashed $secondary-color-1-3
+    overflow: hidden
+    position: relative
+    &:hover .view-demo-btn
+      background: transparentize($secondary-color-2-2, 0.2)
+    &:hover .btn-default
+      display: block
+
+    // DEMO-ITEM-BODY
+    // ==================================
+    img
+      +centering(relative)
+      +size(auto, 100%)
+      @media(max-width: $md)
+        +size(100%, auto)
+      @media(max-width: $sm)
+        +size(auto, 100%)
+
+    // DEMO-ITEM-BODY > BTN-DEFAULT
+    // ==================================
+    .btn-default
+      font-size: 12px
+      +centering(absolute)
+      transition: $default-transition
+      display: none
+
+    // DEMO-ITEM-BODY > VIEW-DEMO-BTN
+    // ==================================
+    .view-demo-btn
+      +size(100%)
+      +centering(absolute)
+      transition: $default-transition
+      text-align: center

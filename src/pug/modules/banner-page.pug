@@ -1,0 +1,62 @@
+//- BANNER-PAGE
+//- ==================================
+mixin banner-page(pageName)
+  section#banner-page
+    
+    //- BANNER-PAGE-CONTENT
+    //- ==================================
+    .banner-page-content
+      
+      //- BANNER-PAGE-FLOWER
+      //- ==================================
+      .banner-page-flower
+        //- FLOWER.LEFT
+        //- ==================================
+        .flower.left
+          img(src="img/flower.png", alt="banner page flower")
+        //- FLOWER.RIGHT
+        //- ==================================
+        .flower.right
+          img(src="img/flower.png", alt="banner page flower")
+      
+      //- BANNER-PAGE-HEADING
+      //- ==================================
+      .banner-page-heading
+        if pageName == null
+          
+          // page title
+          h1.text-capitalize page name
+          
+        else
+          
+          // page title
+          h1.text-capitalize #{pageName}
+      
+      //- BANNER-PAGE-BREADCRUMB
+      //- ==================================
+      if pageName != 'clarissa demo'
+        .banner-page-breadcrumb
+          ul
+            li: a(href="homepage-standart-01.html").text-lowercase home
+            li: span.dot
+            if pageName == null
+              
+              li: a(href="#").text-lowercase.active page name
+              
+            else
+              
+              li: a(href="#").text-lowercase.active #{pageName}
+              
+      else
+        .banner-tagline
+          // page sub heading
+          p.text-uppercase responsive wedding template
+          
+        .banner-description
+          // page description
+          p
+            span Clarissa
+            |
+            |
+            | is a responsive wedding html template with various version. It is a greet wedding theme for your wedding invitation. Nice design and cool feature which make the theme very elegent.
+            

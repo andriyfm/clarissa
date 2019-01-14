@@ -1,9 +1,54 @@
-extends layout.pug
+extend base/layout
 
-block meta
-  title Clarissa Modern Wedding HTML Template
-
-block content
-  h1 Clarissa Modern Wedding HTML Template
-  p Exercitation id amet duis laborum aliqua reprehenderit nulla deserunt mollit reprehenderit ex labore. Proident sunt sunt duis dolore. Anim sint consequat nisi anim ut do incididunt culpa pariatur anim nisi aute dolore. Non sunt eu eu sunt voluptate labore. Cillum non esse non quis eu ex. Sit do officia Lorem irure ipsum sit aliqua labore magna.
+append meta
+  title Clarissa - Modern Wedding HTML Template
+  
+append header
+  +banner-page('clarissa demo')
+  
+append footer
+  include sections/demo-footer-section
+  
+append main
+  
+  section#demo-list-section
+    .container
+      .row
+        
+        - var demos = {1:'homepage standart 01', 2:'homepage standart 02', 3:'homepage standart 03', 4:'homepage standart 04', 5:'homepage standart 05', 6:'homepage standart 06', 7:'homepage standart 07', 8:'homepage standart 08', 9:'blog page standart', 10:'blog post standart'}
+        
+        each demo, index in demos
+        
+          .demo-item.col-lg-6
+            
+            .demo-item-head
+              .number
+                if index != 10
+                  p.text-uppercase 0#{index}
+                else
+                  p.text-uppercase #{index}                    
+                  
+              .title
+                h6.text-capitalize clarissa template
+                h2.text-capitalize= demo
+                
+            .demo-item-body
+              if index == 9
+                img(src="img/blog-page-standart.jpg", alt="blog page standart thumbnail")
+                .view-demo-btn
+                  a(href="blog-page-standart.html", title="blog page standart", target="_blank").btn.btn-default view demo
+              else if index == 10
+                img(src="img/blog-post-standart.jpg", alt="blog post standart thumbnail")
+                .view-demo-btn
+                  a(href="blog-post-standart.html", title="blog post standart", target="_blank").btn.btn-default view demo
+              else                  
+                img(src="img/homepage-thumbnail-0"+index+".jpg", alt="homepage standart thumbnail")
+                .view-demo-btn
+                  a(href="homepage-standart-0"+index+".html", title="blog detail standart", target="_blank").btn.btn-default view demo
+                  
+                
+                
+          
+            
+          
   

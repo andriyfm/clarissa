@@ -1,0 +1,45 @@
+//- RSCP-SECTION
+//- ==================================
+section#rspv-section
+
+  +section-background()
+
+  .container
+
+    .row
+      
+      .rspv-section-head.col-sm-12.col-lg-8.mx-auto
+        +section-header('the reservation', 'are you attend?')
+        
+        // section description
+        p.text-center My fiancé proposed on the Fourth of July. My mother asked us to go to the backyard to get some chairs and he took me by the shed where we could see all of the fireworks. 
+        
+    .row
+
+      .rspv-section-body.col-sm-12.col-lg-10.mx-auto
+        
+        form
+          .row.rspv-section-input-area
+            
+            .col-sm-6
+              .form-group
+                label.sr-only(for='name') your name
+                input.form-control(type='text' id='name' placeholder='your name')
+              .form-group
+                label.sr-only(for='email') your email
+                input.form-control(type='email' id='email' placeholder='your email')
+              .form-group
+                label.sr-only(for='attend') are you attend
+                select.form-control(id='attend')
+                  option are you attend
+                  option yes
+                  option no
+                  
+            .col-sm-6
+              .form-group
+                label.sr-only(for='messsage') message
+                textarea.form-control(id='message' placeholder='message')
+                  
+          .row
+            .col-12.text-center
+              button.btn.btn-default(type='submit') submit

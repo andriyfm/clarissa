@@ -1,0 +1,36 @@
+/* SECTION-HEADER
+/* ==================================
+.section-header
+  position: relative
+  margin-bottom: 60px
+
+  // SECTION-HEADER > IMG
+  // ==================================
+  img
+    +centering(absolute)
+    +size(auto, 154px)
+    opacity: 0.2
+
+  // SECTION-HEADER > H2,
+  // SECTION-HEADER > H6
+  // ==================================
+  h2, h6
+    z-index: 3
+    position: relative
+
+  // SECTION-HEADER > H2
+  // ==================================
+  h2
+    font-family: $font-base
+    font-weight: 300
+    font-size: 36px
+    letter-spacing: letterSpacing(20)
+    color: $primary-color-4
+
+  // SECTION-HEADER > H6
+  // ==================================
+  h6
+    font-size: 30px
+    line-height: lineHeight(30px, 30px)
+    color: $secondary-color-1-4
+    margin-bottom: 7px

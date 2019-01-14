@@ -1,0 +1,27 @@
+/* BTN
+/* ==================================
+.btn
+  text-transform: uppercase
+  cursor: pointer
+
+/* BTN-DEFAULT
+/* ==================================
+.btn-default
+  background: $secondary-color-1-4
+  border-radius: 30px
+  font-size: 14px
+  letter-spacing: letterSpacing(20)
+  color: $secondary-color-2-2
+  padding: 10px 20px
+  transition: all 150ms ease-in-out
+
+  // BTN-DEFAULT:HOVER
+  // ==================================
+  &:hover
+    background: lighten($secondary-color-1-4, 10)
+    color: $secondary-color-2-2
+
+  // BTN-DEFAULT:FOCUS
+  // ==================================
+  &:focus
+    box-shadow: none

@@ -1,0 +1,188 @@
+/* BANNER-STANDART-4
+/* ==================================
+#banner-standart-4
+  height: 100vh
+  position: relative
+  background: $secondary-color-1-2
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center
+  background-attachment: fixed
+
+  // CONTAINER-FLUID
+  // ==================================
+  .container-fluid
+    +centering(absolute)
+
+  // BANNER-CONTENT
+  // ==================================
+  .banner-content
+    text-align: center
+
+  // BANNER-SUB-HEADING
+  // ==================================
+  .banner-sub-heading
+    margin-bottom: 90px
+
+    // BANNER-SUB-HEADING > H2
+    // ==================================
+    h2
+      padding: 15px 30px
+      border-top: 4px dotted $secondary-color-1-3
+      border-bottom: 4px dotted $secondary-color-1-3
+      font-family: $font-base
+      font-size: 12px
+      line-height: 14px
+      letter-spacing: letterSpacing(440)
+      color: $secondary-color-1-5
+      display: inline-block
+      position: relative
+
+      // BANNER-SUB-HEADING::BEFORE,
+      // BANNER-SUB-HEADING::AFTER
+      // ==================================
+      &::before,
+      &::after
+        content: ""
+        background: $secondary-color-1-3
+        +size(10px)
+        border-radius: 100%
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+
+      // BANNER-SUB-HEADING::BEFORE
+      // ==================================
+      &::before
+        left: 0
+
+      // BANNER-SUB-HEADING::AFTER
+      // ==================================
+      &::after
+        right: 0
+
+  // BANNER-HEADING
+  // ==================================
+  .banner-heading
+    +size(40%, auto)
+    position: relative
+    margin: 30px auto
+
+    // BANNER-HEADING > H1
+    // ==================================
+    h1
+      font-size: 72px
+      line-height: 72px
+      color: $secondary-color-2-2
+      display: inline-block
+      background: transparent
+      padding: 20px 60px
+      position: relative
+      z-index: 1
+
+      // BANNER-HEADEING > H1::BEFORE
+      // ==================================
+      &::before
+        z-index: -1
+        content: ""
+        +size(100%)
+        +centering(absolute)
+        background: transparentize($secondary-color-1-5, 0.5)
+        border-radius: 60px
+        mask: url("../img/rectangle.svg")
+        mask-repeat: repeat
+        mask-size: 100%
+        mask-position: 0 0
+
+  // FLOWER
+  // ==================================
+  .flower
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+
+    // FLOWER.LEFT
+    // ==================================
+    &.left
+      left: 60px
+      transform: translateY(-50%) rotate(-90deg)
+
+    // FLOWER.RIGHT
+    // ==================================
+    &.right
+      right: 60px
+      transform: translateY(-50%) rotate(-90deg) rotateX(180deg)
+
+    // FLOWER > IMG
+    // ==================================
+    img
+      width: 230px
+      height: auto
+
+  // BANNER-DATE
+  // ==================================
+  .banner-date
+
+    // BANNER-DATE > UL
+    // ==================================
+    ul
+      list-style-type: none
+      padding: 10px 0
+      background: $secondary-color-1-5
+      border-radius: 30px
+      width: 250px
+      margin: 0 auto 30px
+      display: flex
+      justify-content: center
+      align-items: center
+      position: relative
+
+      // BANNER-DATE > UL::BEFORE
+      // ==================================
+      &::before
+        content: ""
+        +size(calc(100% + 30px))
+        +centering(absolute)
+        border: 2px dashed $secondary-color-1-3
+        border-radius: 60px
+
+      // BANNER-DATE UL > LI
+      // ==================================
+      li
+        font-size: 36px
+        font-weight: 700
+        line-height: 36px
+        color: $secondary-color-2-2
+
+      // BANNER-DATE UL > LI > > SPAN.DOT
+      // ==================================
+      li > span.dot
+        display: block
+        +size(10px)
+        background: $secondary-color-1-4
+        border-radius: 100%
+        margin: 0 10px
+
+  // BANNER-DETAIL
+  // ==================================
+  .banner-detail
+    position: relative
+    padding-top: 40px
+
+    // BANNER-DETAIL > H3
+    // ==================================
+    h3
+      font-size: 26px
+      line-height: 26px
+      color: $primary-color-2
+      margin-bottom: 20px
+
+    // BANNER-DETAIL > P
+    // ==================================
+    p
+      font-size: 12px
+      line-height: lineHeight(20px, 12px)
+      letter-spacing: letterSpacing(200)
+      color: $secondary-color-1-2
+      width: 300px
+      margin: 0 auto

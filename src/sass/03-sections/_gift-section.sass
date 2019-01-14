@@ -1,0 +1,68 @@
+/* GIFT-SECTION
+/* ==================================
+#gift-section
+  text-align: center
+  padding: 170px 0
+  background-image: url('../img/gift-bg-img.jpg')
+  background-size: cover
+  background-position: center
+  background-attachment: fixed
+  background-repeat: no-repeat
+
+  // GIFT-SECTION [SMALL DEVICE]
+  // ==================================
+  @media(max-width: $sm)
+    padding: 80px 0 !important
+
+  // GIFT-SECTION [MEDIUM DEVICE]
+  // ==================================
+  @media(max-width: $md)
+    padding: 100px 0
+
+  // GIFT-CARD
+  // ==================================
+  .gift-card
+    background: $secondary-color-2-2
+    padding: 50px
+    mask: url('../img/rectangle.svg'), url('../img/elipse.svg'), url('../img/elipse.svg'), url('../img/elipse.svg'), url('../img/elipse.svg')
+    mask-repeat: repeat, no-repeat, no-repeat, no-repeat, no-repeat
+    mask-size: 100px, 100px, 100px, 100px
+    mask-position: -50px -50px, calc(100% + 50px) -50px, calc(100% + 50px) calc(100% + 50px), -50px calc(100% + 50px)
+    mask-composite: source-out
+    position: relative
+    transition: $default-transition
+
+    // GIFT-CARD::AFTER
+    // ==================================
+    &::after
+      content: ""
+      +centering(absolute)
+      +size(calc(100% - 50px))
+      border: 2px dashed $secondary-color-1-2
+      background: transparent
+      transition: $default-transition
+
+    // GIFT-CARD::HOVER
+    // ==================================
+    &:hover
+      background: $secondary-color-1-5
+    &:hover::after
+      border-color: $secondary-color-1-4
+    &:hover .gift-card-head > img
+    &:hover .gift-card-body > p
+      color: $secondary-color-1-2
+
+  // GIFT-CARD-HEAD
+  // ==================================
+  .gift-card-head
+    margin-bottom: 25px
+
+  // GIFT-CARD BODY
+  // ==================================
+  .gift-card-body
+
+    // GIFT-CARD-BODY > P
+    // ==================================
+    p
+      margin-bottom: 0
+      color: $paragraph-color

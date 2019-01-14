@@ -1,0 +1,53 @@
+//- BLOG-SECTION
+//- ==================================
+section#blog-section
+  
+  //- CONTAINER
+  //- ==================================
+  .container
+    
+    //- ROW
+    //- ==================================
+    .row
+      
+      //- COLUMNS
+      //- ==================================
+      .blog-section-head.col-sm-6.col-md-8.mx-auto
+        +section-header('our special journal', 'story of love')
+        
+        // section description
+        p My fiancé proposed on the Fourth of July. My mother asked us to go to the backyard to get some chairs and he took me by the shed where we could see all of the fireworks. 
+      
+    //- ROW
+    //- ==================================
+    .row
+      
+      - var titles = {1:'story of love', 2:"we're happy", 3:'travel again'}
+      each title, index in titles
+        
+        .blog-section-body.col-md-8.col-lg-4.mx-auto
+          .blog-card
+            .blog-card-head
+              
+              // blog thumbnail
+              img(src="img/blog-img-"+ index +".jpg", alt="blog image")
+                
+            .blog-card-body
+              .blog-card-detail
+
+                ul.blog-card-date
+                  // blog date
+                  li 24
+                  // blog month
+                  li.text-uppercase mar
+
+                .blog-card-title
+                  // blog categoriez
+                  h6.text-capitalize wedding
+                  // blog titlt
+                  h3.text-capitalize #{title}
+
+              .blog-card-description
+                // blog description
+                p Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit.
+                a.btn.btn-default.text-capitalize(href="blog-post-standart.html") read more

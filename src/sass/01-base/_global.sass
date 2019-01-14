@@ -1,0 +1,40 @@
+/* BODY
+/* ==================================
+body
+  font-family: $font-base
+  font-size: $base-size
+  background: $primary-color-2
+
+/* HEADING
+/* ==================================
+h1, h2, h3, h4, h5, h6
+ font-family: $font-heading
+ margin: 0
+
+/* PARAGRAPH
+/* ==================================
+p
+  margin: 0
+  color: $secondary-color-1-3
+  line-height: lineHeight(26px, $base-size)
+  letter-spacing: letterSpacing(20)
+  color: $paragraph-color
+
+/* ANCHOR
+/* ==================================
+a
+  color: $primary-color-4
+  transition: $default-transition
+  &:hover
+    color: $primary-color-5
+    text-decoration: none
+
+/* SHORTHAND TO REMOVE MARGIN AND PADDING OF BOOTSTRAP
+/* ==================================
+.no-gutters
+  margin-right: 0
+  margin-left: 0
+  & > .col,
+  & > [class *= "col-"]
+    padding-right: 0
+    padding-left: 0

@@ -1,0 +1,106 @@
+/* FOOTER-SECTION
+/* ==================================
+#footer-section
+  text-align: center
+  background: $secondary-color-1-4
+  padding: 170px 0
+  position: relative
+  overflow: hidden
+  background-image: url(../img/banner-img.jpg)
+  background-size: cover
+  background-position: center
+  background-attachment: fixed
+  background-repeat: no-repeat
+
+  // FOOTER-SECTION [SMALL DEVICE]
+  // ==================================
+  @media(max-width: $sm)
+    padding: 80px 0 !important
+
+  // FOOTER-SECTION [MEDIUM DEVICE]
+  // ==================================
+  @media(max-width: $md)
+    padding: 100px 0 !important
+
+  // FOOTER-HEAD
+  // ==================================
+  .footer-head
+    font-family: $font-base
+    font-size: 12px
+    font-weight: 700
+    line-height: 12px
+    letter-spacing: letterSpacing(440)
+    color: $secondary-color-1-2
+    display: inline-block
+    background: $secondary-color-1-5
+    padding: 10px 50px
+    margin-bottom: 40px
+    border-radius: 30px
+    position: relative
+
+    // FOOTER-HEAD::BEFORE
+    // FOOTER-HEAD::AFTER
+    // ==================================
+    &::before,
+    &::after
+      content: ""
+      background: $secondary-color-1-2
+      +size(8px)
+      border-radius: 100%
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+
+    // FOOTER-HEAD::BEFORE
+    // ==================================
+    &::before
+      left: 10px
+
+    // FOOTER::AFTER
+    // ==================================
+    &::after
+      right: 10px
+
+  // FOOTER BODY
+  // ==================================
+  .footer-body
+    font-size: 90px
+    line-height: 90px
+    color: $secondary-color-1-2
+    margin-bottom: 40px
+
+    // FOOTER-BODY [XTRA-SMALL DEVICE]
+    // ==================================
+    @media(max-width: $xs)
+      font-size: 60px !important
+
+    // FOOTER-BODY [SMALL DEVICE]
+    // ==================================
+    @media(max-width: $sm)
+      font-size: 72px
+
+  // FOOTER FOOT
+  // ==================================
+  .footer-foot
+    font-size: 12px
+    font-weight: 300
+    line-height: lineHeight(24px, 14px)
+    letter-spacing: letterSpacing(200)
+    color: $secondary-color-2-2
+    display: inline-block
+    width: 300px
+    margin: 0 auto
+    padding: 15px 40px
+    border: 2px dashed $secondary-color-1-4
+    border-radius: 60px
+    background: transparentize($secondary-color-1-5, 0.6)
+
+    // FOOTER-FOOT [XTRA-SMALL DEVICE]
+    // ==================================
+    @media(max-width: $xs)
+      width: 100%
+
+    // FOOTER-FOOT [SMALL DEVICE]
+    // ==================================
+    @media(max-width: $sm)
+      font-size: 14px

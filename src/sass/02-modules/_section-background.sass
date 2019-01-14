@@ -1,0 +1,24 @@
+/* SECTION-BACKGROUND
+/* ==================================
+.section-background
+  +centering(absolute)
+  z-index: -1
+  width: 100%
+
+  // SECTION-BACKGROUND > FLOWER
+  // ==================================
+  .flower
+    position: absolute
+    top: 50%
+
+    // SECTION-BACKGROUND > FLOWER.RIGHT
+    // ==================================
+    &.right
+      right: -5%
+      transform: rotateY(0) translateY(-50%)
+
+    // SECTION-BACKGROUND > FLOWER.LEFT
+    // ==================================
+    &.left
+      left: -5%
+      transform: rotateY(180deg) translateY(-50%)

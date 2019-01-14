@@ -1,0 +1,304 @@
+/* BLOG-PAGE-STANDART
+/* ==================================
+#blog-page-standart
+  margin-top: 200px
+  margin-bottom: 170px - 30px
+  @media(max-width: $sm)
+    margin-top: 260px
+
+  // MAIN-CONTENT
+  // ==================================
+  .main-content
+
+    // MAIN-CONTENT > ARTICLE
+    // ==================================
+    article
+      background: $secondary-color-2-2
+      margin-bottom: 30px
+      mask: url("../img/rectangle.svg"), url("../img/elipse.svg"), url("../img/elipse.svg")
+      mask-repeat: repeat, no-repeat, no-repeat
+      mask-size: 100%, 100px, 100px
+      mask-position: 0 0, -50px -50px, calc(100% + 50px) calc(100% + 50px)
+      mask-composite: source-out
+      @media(max-width: $sm)
+        mask: none
+
+  // ARTICLE-COVER
+  // ==================================
+  .article-cover
+    +size(100%, 300px)
+    overflow: hidden
+    margin-bottom: 30px
+    position: relative
+
+    // ARTICLE-COVER > IMG
+    // ==================================
+    img
+      width: 100%
+      height: auto
+      @media(max-width: $sm)
+        height: 100%
+        width: auto
+        +centering(relative)
+
+  // ARTICLE-HEAD
+  // ==================================
+  .article-head
+    display: flex
+    align-items: center
+    padding: 0 30px 30px
+    border-bottom: 1px solid $secondary-color-1-2
+    margin-bottom: 30px
+
+    // ARTICLE-HEAD > BLOG-DATE
+    // ==================================
+    .blog-date
+      list-style-type: none
+      padding: 5px
+      margin: 0 20px 0 0
+      display: flex
+      flex-direction: column
+      justify-content: space-around
+      align-items: center
+      +size(60px)
+      border: 2px solid $secondary-color-1-3
+      border-radius: 10px
+      @media(max-width: $sm)
+        +size(70px)
+        flex-shrink: 0
+
+    // ARTICLE-HEAD > BLOG-DATE > LI
+    // ==================================
+    .blog-date li:first-child
+      font-size: 26px
+      line-height: 26px
+      letter-spacing: letterSpacing(20)
+      color: $secondary-color-1-1
+    .blog-date li:last-child
+      font-size: 12px
+      line-height: 12px
+      letter-spacing: letterSpacing(20)
+      color: $secondary-color-1-3
+
+    // ARTICLE-HEAD > BLOG-NAME
+    // ==================================
+    .blog-name
+      display: flex
+      flex-direction: column
+      justify-content: space-around
+
+      // ARTICLE-HEAD > BLOG-NAME > CATEGORIES
+      // ==================================
+      .categories
+        list-style-type: none
+        padding: 0
+        margin: 0 0 4px
+        display: flex
+        flex-direction: row
+        align-items: center
+      .categories > li
+        font-size: 12px
+        position: relative
+      .categories > li > a
+        display: block
+        color: $secondary-color-1-1
+        &:hover
+          color: $secondary-color-1-4
+      .categories > li > span.dot
+        display: block
+        +size(6px)
+        background: $secondary-color-1-2
+        border-radius: 100%
+        margin: 0 5px
+
+      // ARTICLE-HEAD > BLOG-NAME > TITLE
+      // ==================================
+      .title
+        font-family: $font-base
+        font-size: 30px
+        font-weight: 300
+        display: block
+        letter-spacing: letterSpacing(20)
+        color: $primary-color-4
+        &:hover
+          color: $primary-color-5
+
+    // ARTICLE-HEAD > BLOG-COMMENT
+    // ==================================
+    .blog-comment
+      margin-left: auto
+      padding: 10px 20px
+      border: 2px dashed $secondary-color-1-2
+      border-radius: 30px
+      @media(max-width: $sm)
+        display: none
+
+      // ARTICLE-HEAD > BLOG-COMMENT > P
+      // ==================================
+      p
+        font-size: 12px
+        line-height: 12px
+        color: $secondary-color-1-1
+
+  // ARTICLE-BODY
+  // ==================================
+  .article-body
+    padding: 0 30px 30px
+
+    // ARTICLE-BODY > P
+    // ==================================
+    p
+      margin-bottom: 30px
+
+  // ASIDE-CONTENT
+  // ==================================
+  .aside-content
+
+    // ASIDE-CONTENT > SECTION
+    // ==================================
+    section
+      background: $secondary-color-2-2
+      padding: 30px
+      margin-bottom: 30px
+      mask: url("../img/rectangle.svg"), url("../img/elipse.svg")
+      mask-repeat: repeat, no-repeat
+      mask-size: 100%, 60px
+      mask-position: 0 0, calc(100% + 30px) calc(100% + 30px)
+      mask-composite: source-out
+    section:last-child
+      margin-bottom: 0
+
+    // ASIDE-CONTENT > H4
+    // ==================================
+    h4
+      font-family: $font-base
+      font-size: 20px
+      line-height: 20px
+      letter-spacing: letterSpacing(20)
+      margin-bottom: 30px
+      padding-bottom: 15px
+      color: $primary-color-4
+      border-bottom: 1px solid $secondary-color-1-2
+
+    // ASIDE-CONTENT > SECTION.CATEGORIES
+    // ==================================
+    section.categories
+
+      // ASIDE-CONTENT > SECTION.CATEGORIES > UL
+      // ==================================
+      ul
+        list-style-type: none
+        padding: 0
+        margin: 0
+
+      // ASIDE-CONTENT > SECTION.CATEGORIES > UL > LI
+      // ==================================
+      ul > li
+        margin-bottom: 15px
+        position: relative
+        padding-left: 20px
+        &::before
+          content: ""
+          +size(6px)
+          position: absolute
+          top: 50%
+          left: 0
+          transform: translateY(-50%)
+          background: $secondary-color-1-3
+          border-radius: 100%
+          transition: $default-transition
+      ul > li:last-child
+        margin-bottom: 0
+      ul > li:hover::before
+        background: $secondary-color-1-5
+      ul > li > a
+        color: $secondary-color-1-4
+        transition: $default-transition
+        &:hover
+          color: $secondary-color-1-5
+
+    // ASIDE-CONTENT > SECTION.POPULAR-POSTS
+    // ==================================
+    section.popular-posts
+
+      // SECTION.POPULAR-POSTS > POPULAR-POST-ITEM
+      // ==================================
+      .popular-post-item
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        margin-bottom: 20px
+        &:hover .popular-post-detail h5 > a
+          color: $primary-color-5
+
+      // SECTION.POPULAR-POSTS > POPULAR-POST-THUMBNAIL
+      // ==================================
+      .popular-post-thumbnail
+        +size(80px)
+        border-radius: 10px
+        overflow: hidden
+        margin-right: 20px
+
+        // SECTION.POPULAR-POSTS > POPULAR-POST-THUMBNAIL > IMG
+        // ==================================
+        img
+          +size(100%, auto)
+          +centering(relative)
+
+      // SECTION.POPULAR-POSTS > POPULAR-POST-DETAIL
+      // ==================================
+      .popular-post-detail
+        flex-shrink: 10
+
+        // SECTION.POPULAR-POSTS > POPULAR-POST-DETAIL > H6
+        // ==================================
+        h6
+          font-family: $font-base
+          font-size: 12px
+          color: $secondary-color-1-1
+          margin-bottom: 4px
+
+        // SECTION.POPULAR-POSTS > POPULAR-POST-DETAIL > H5
+        // ==================================
+        h5
+          font-family: $font-base
+          font-size: 18px
+          letter-spacing: letterSpacing(50)
+          line-height: lineHeight(24px, 18px)
+
+    // ASIDE-CONTENT > SECTION.TAGS
+    // ==================================
+    section.tags
+
+      // ASIDE-CONTENT > SECTION.TAGS > UL
+      // ==================================
+      ul
+        list-style-type: none
+        padding: 0
+        margin: 0
+        display: flex
+        justify-content: flex-start
+        flex-wrap: wrap
+      // ASIDE-CONTENT > SECTION.TAGS > UL > LI
+      // ==================================
+      ul > li
+        margin-bottom: 10px
+        margin-right: 6px
+
+      // ASIDE-CONTENT > SECTION.TAGS > UL > LI > A
+      // ==================================
+      ul > li > a
+        font-size: 12px
+        display: block
+        border-radius: 30px
+        padding: 6px 10px
+        border: 2px dashed $secondary-color-1-2
+        color: $secondary-color-1-4
+        transition: $default-transition
+
+        // ASIDE-CONTENT > SECTION.TAGS > UL > LI > A:HOVER
+        // ==================================
+        &:hover
+          background: $secondary-color-1-4
+          color: $secondary-color-2-2
+          border-color: $secondary-color-1-4

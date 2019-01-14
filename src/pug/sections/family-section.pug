@@ -1,0 +1,73 @@
+//- SECTION-FAMILY
+//- ==================================
+section#family-section
+  
+  //- CONTAINER
+  //- ==================================
+  .container
+    
+    //- SECTION-HEADER
+    //- ==================================
+    .section-header.row.justify-content-center
+    
+      //- COLUMN
+      //- ==================================
+      .col-sm-6.col-md-8.text-center
+        +section-header('brides & groomsman', 'the brides family')
+        
+        // section description
+        p My fiancé proposed on the Fourth of July. My mother asked us to go to the backyard to get some chairs and he took me by the shed where we could see all of the fireworks.
+        
+    //- SECTION-BODY
+    //- ==================================
+    .section-body.row
+      
+      - var cardProfiles = [1, 2, 3]
+      each card in cardProfiles
+        
+        .col-sm-4.col-md-8.col-lg-4.mx-auto
+          .card-profile.text-center
+            
+            .card-profile-background
+              
+            .card-profile-content
+              .flowers
+                .flower-left
+                  img(src="img/flower.png", alt="flower")
+                .flower-right
+                  img(src="img/flower.png", alt="flower")
+                  
+              .card-profile-photo
+                // the bridesmaid or groomsmain photo
+                img(src="img/family-img-" + card + ".jpg", alt="card profile photo")
+                
+              case card
+                when 1
+                  // the bridesmaid or groomsman title
+                  h6.text-capitalize sister
+                  // the bridesmaid or groomsman name
+                  h3.text-capitalize alexandra
+                  
+                when 2
+                  // the bridesmaid or groomsman title
+                  h6.text-capitalize brother
+                  // the bridesmaid or groomsman name
+                  h3.text-capitalize gustavo
+                  
+                when 3
+                  // the bridesmaid or groomsman title
+                  h6.text-capitalize friend
+                  // the bridesmaid or groomsman name
+                  h3.text-capitalize shamanta
+                  
+                default
+                  
+                  // the bridesmaid or groomsman title
+                  h6.text-capitalize brother
+                  // the bridesmaid or groomsman name
+                  h3.text-capitalize gustavo
+              
+              span.dot
+              
+              // the bridesmaid or groomsman messages
+              p Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit.

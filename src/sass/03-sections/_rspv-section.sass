@@ -1,0 +1,84 @@
+/* RSPV-SECTION
+/* ==================================
+#rspv-section
+  padding: 170px 0
+  position: relative
+  overflow: hidden
+  z-index: 1
+
+  // RSPV-SECTION [SMALL DEVICE]
+  // ==================================
+  @media(max-width: $sm)
+    padding: 80px 0
+
+  // RSPV-SECTION [SMALL DEVICE]
+  // ==================================
+  @media(max-width: $md)
+    padding: 100px 0
+
+  // SECTION-HEADER
+  // ==================================
+  .section-header
+    text-align: center
+
+  // RSPV-SECTION-HEAD
+  // ==================================
+  .rspv-section-head
+    margin-bottom: 80px
+
+  // RSPV-SECTION-BODY
+  // ==================================
+  .rspv-section-body
+
+    // RSPV-SECTION-BODY > SELECT
+    // ==================================
+    select.form-control
+      height: inherit
+
+    // RSPV-SECETION-BODY > TEXTAREA
+    // ==================================
+    textarea.form-control
+      resize: none
+      height: 201px
+      align-self: stretch
+
+    // RSPV-SECTION-BODY > BUTTON
+    // ==================================
+    button.btn-default
+      margin-top: 30px
+
+    // RSPV-SECTION-BODY > FORM-GROUP:LAST-CHILD
+    // ==================================
+    .form-group:last-child
+      margin-bottom: 0
+
+  // RSPV-SECTION-INPUT-AREA
+  // ==================================
+  .rspv-section-input-area
+    +size(100%, auto)
+    padding: 50px
+    background: $secondary-color-2-2
+    position: relative
+    margin-right: 0
+    margin-left: 0
+    z-index: 1
+    mask: url('../img/rectangle.svg'), url('../img/elipse.svg'), url('../img/elipse.svg'), url('../img/elipse.svg'), url('../img/elipse.svg')
+    mask-repeat: repeat, no-repeat, no-repeat, no-repeat, no-repeat
+    mask-composite: source-out
+    mask-size: 100%, 100px, 100px, 100px, 100px
+    mask-position: 0, -50px -50px, calc(100% + 50px) -50px, calc(100% + 50px) calc(100% + 50px), -50px calc(100% + 50px)
+
+    // RSPV-SECTION-INPUT-ARE::AFTER
+    // ==================================
+    &::after
+      content: ""
+      +size(calc(100% - 60px))
+      +centering(absolute)
+      border: 2px dashed $secondary-color-1-2
+      z-index: -1
+
+    // RSPV-SECTION-INPUT-AREA[CLASS*='COL-']
+    // ==================================
+    [class*='col-']
+      padding-top: 15px
+      padding-bottom: 15px

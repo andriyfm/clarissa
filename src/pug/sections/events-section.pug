@@ -1,0 +1,124 @@
+//- EVENT-SECTION
+//- ==================================
+section#events-section
+  //- EVENT-SECTION > CONTAINER
+  //- ==================================
+  .container-fluid
+    
+    - var rows = [1, 2, 3, 4]
+    each row in rows
+      
+      //- EVENT-SECTION > ROW
+      //- ==================================
+      .row
+        
+        case row
+          when 1
+          when 3
+            
+            //- EVENT-DETAIL
+            //- ==================================
+            .event-detail.col-md-12.col-lg-6.align-self-center.order-2
+              
+              //- EVENT-DETAIL-HEADER
+              //- ==================================
+              .event-detail-header
+                //- SECTION-HEADER
+                //- ==================================
+                if row == 1
+                  +section-header('reception', 'wedding event')
+                else
+                  +section-header('dancing party', 'wedding event')
+                
+                
+              //- EVENT-DETAIL-BODY
+              //- ==================================
+              .event-detail-body
+                // event description
+                p Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo.
+                
+              //- EVENT-DETAIL-FOOTER
+              //- ==================================
+              .event-detail-footer
+                
+                //- EVENT-DETAIL-FOOTER > TIME
+                //- ==================================
+                .time
+                  // event time
+                  h4 06:00
+                  
+                //- EVENT-DETAIL-FOOTER > ADDRESS
+                //- ==================================
+                .address
+                  // event location
+                  p.text-capitalize st. gabriele church
+                  // event address
+                  p.text-capitalize sacramento california
+                  
+            //- EVENT-PHOTO
+            //- ==================================
+            .event-photo.col-md-12.col-lg-6.order-1
+              if row == 1
+                
+                // event photo
+                img(src="img/event-img-1.jpg", alt="event photo")
+                  
+              else
+                
+                // event photo
+                img(src="img/event-img-3.jpg", alt="event photo")                
+                
+          when 2
+          when 4
+            
+            //- EVENT-DETAIL
+            //- ==================================
+            .event-detail.col-md-12.col-lg-6.align-self-center.order-1
+              
+              //- EVENT-DETAIL-HEADER
+              //- ==================================
+              .event-detail-header
+                //- SECTION-HEADER
+                //- ==================================
+                if row == 2
+                  +section-header('ceremony', 'wedding event')
+                else
+                  +section-header("let's dinner", 'wedding event')
+                
+              //- EVENT-DETAIL-BODY
+              //- ==================================
+              .event-detail-body
+                // event description
+                p Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo.
+                
+              //- EVENT-DETAIL-FOOTER
+              //- ==================================
+              
+              .event-detail-footer
+                //- EVENT-DETAIL-FOOTER > TIME
+                //- ==================================
+                
+                .time
+                  // event time
+                  h4 06:00
+                  
+                //- EVENT-DETAIL-FOOTER > ADDRESS
+                //- ==================================
+                .address
+                  // event location
+                  p.text-capitalize st. gabriele church
+                  // event address
+                  p.text-capitalize sacramento california
+                  
+            //- EVENT-PHOTO
+            //- ==================================
+            .event-photo.col-md-12.col-lg-6.order-2
+              if row == 2
+                
+                // event photo
+                img(src="img/event-img-2.jpg", alt="event photo")
+                  
+              else
+                
+                // event photo
+                img(src="img/event-img-4.jpg", alt="event photo")

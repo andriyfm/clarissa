@@ -1,0 +1,25 @@
+//- GALLERY-SECTION
+//- ==================================
+section#gallery-section
+  
+  //- CONTAINER-FLUID
+  //- ==================================
+  .container-fluid
+    
+    .row.no-gutters
+      
+      - var images = [1, 2, 3, 4, 5, 6, 7, 8]
+      each img in images
+        
+        .gallery-section-item.col-md-6.col-lg-6.col-xl-3
+          
+          // gallery photo
+          img(src="img/gallery-img-" + img + ".jpg", alt="gallery image")
+            
+          .gallery-section-detail
+            
+            +section-header('two weeks in mexico', 'traveling')
+            
+            // gallery photo description
+            p Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit.
+      

@@ -1,0 +1,97 @@
+extend base/layout
+
+append meta
+  title Blog Post Standart - Clarissa Modern Wedding HTML Template
+  
+append header
+  
+  // NAVBAR SECTION
+  include sections/navbar-blog-section
+  
+  // BANNER SECTION
+  +banner-page('blog post')
+  
+append footer
+  
+  // FOOTER SECTION
+  include sections/footer-section
+  
+  // SOUNDCLOUD PLAYER
+  include modules/soundcloud-player
+  
+append main
+  
+  //- BLOG-POST-STANDART
+  //- ==================================
+  article#blog-post-standart
+    
+    //- CONTAINER
+    //- ==================================
+    .container
+      
+      //- BLOG-POST-HEAD
+      //- ==================================
+      .blog-post-head
+        
+        //- BLOG-POST-DATE
+        //- ==================================
+        ul.blog-post-date
+          li.text-uppercase 24
+          li.text-uppercase mar
+          
+        //- BLOG-POST-TITLE
+        //- ==================================
+        .blog-post-title
+          //- FLOWER
+          //- ==================================
+          .flower
+            img(src="img/flower-bw.png", alt="flower blog post title")
+          h6.text-capitalize uncategorize
+          h1.text-capitalize: a(href="#") wea are traveling again
+          
+        //- BLOG-POST-COMMENT-TOTAL
+        //- ==================================
+        .blog-post-comment-total
+          p.text-capitalize 20 comments
+          
+      //- BLOG-POST-BODY
+      //- ==================================
+      .blog-post-body
+        
+        //- FEATURE-IMAGE
+        //- ==================================
+        .feature-image
+          img(src="img/blog-img-3.jpg", alt="feature image")
+            
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus venenatis tortor non lectus semper faucibus. Proin sit amet erat sed odio auctor sodales in sit amet magna. Pellentesque maximus accumsan enim et sagittis. Vivamus bibendum turpis nulla, eu finibus sem tempus quis. Fusce rutrum pharetra pellentesque. In hac habitasse platea dictumst. Aliquam eu mauris vulputate, euismod lacus vel, placerat libero. Aliquam vel dolor risus. Sed nisi massa, efficitur eget porta id, sollicitudin vel magna. Suspendisse quis tortor ac ex commodo elementum ut sed sem.
+        
+        blockquote Donec nec elementum magna. Donec in vulputate ligula. Praesent rutrum nulla nec pharetra rhoncus. Aliquam ac ultricies neque, vitae blandit sapien. Donec vel ante vel ipsum scelerisque fermentum quis condimentum leo. Aenean a quam id libero elementum mollis non vitae augue.
+        
+        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus venenatis tortor non lectus semper faucibus. Proin sit amet erat sed odio auctor sodales in sit amet magna. Pellentesque maximus accumsan enim et sagittis. Vivamus bibendum turpis nulla, eu finibus sem tempus quis. Fusce rutrum pharetra pellentesque. In hac habitasse platea dictumst. Aliquam eu mauris vulputate, euismod lacus vel, placerat libero. Aliquam vel dolor risus. Sed nisi massa, efficitur eget porta id, sollicitudin vel magna. Suspendisse quis tortor ac ex commodo elementum ut sed sem.
+        
+      //- BLOG-POST-FOOT
+      //- ==================================
+      .blog-post-foot
+        
+        //- BLOG-POST-SHARE
+        //- ==================================
+        ul.blog-post-share
+          - var ionSocials = ['facebook', 'twitter', 'instagram', 'googleplus']
+          each icon in ionSocials
+            if icon == 'googleplus'
+              li: a(href="http://plus.google.com"): i(class="icon ion-social-" + icon)
+            else
+              li: a(href="http://" + icon + ".com"): i(class="icon ion-social-" + icon)
+            
+        //- BLOG-POST-TAGS
+        //- ==================================
+        ul.blog-post-tags
+          - var tags = ['wedding', 'photography', 'moments']
+          each tag in tags
+            li: a(href="#").text-lowercase #{tag}
+        
+
+  //- COMMENTS-SECTION
+  //- ==================================
+  // COMENT SECTION
+  include sections/comments-section

@@ -1,0 +1,21 @@
+//- GIFT-SECTION
+//- ==================================
+section#gift-section
+
+  .container
+
+    .row
+      
+      - var cards = [1, 2, 3]
+      each card in cards
+
+        .gift-card.col-md-7.col-lg-4.mx-auto
+
+          .gift-card-head
+            
+            // gift or brand logo
+            img(src="img/gift-logo-img-" + card + ".png", alt="gift logo")
+
+          .gift-card-body
+            // gift or brand description
+            p Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit.

@@ -1,0 +1,162 @@
+/* BANNER-PAGE
+/* ==================================
+#banner-page
+  height: 346px
+  background-image: url(../img/banner-img.jpg)
+  background-position: center -100px
+  background-repeat: no-repeat
+  background-size: cover
+  background-attachment: fixed
+  position: relative
+
+  // BANNER-PAGE-CONTENT
+  // ==================================
+  .banner-page-content
+    position: absolute
+    left: 50%
+    top: calc(100% - 65px)
+    transform: translateX(-50%)
+    text-align: center
+
+  // BANNER-PAGE-FLOWER
+  // ==================================
+  .banner-page-flower
+    +size(100%)
+    position: absolute
+    z-index: -1
+
+    // BANNER-PAGE-FLOWER
+    // ==================================
+    .flower
+      position: absolute
+      top: -33%
+      @media(max-width: $sm)
+        top: -20%
+      &.left
+        left: -9%
+      &.right
+        right: -9%
+        transform: rotateY(180deg)
+
+      // FLOWER > IMG
+      // ==================================
+      img
+        @media(max-width: $sm)
+          width: 80%
+          height: auto
+
+  // BANNER-PAGE-HEADING
+  // ==================================
+  .banner-page-heading
+    +size(500px, auto)
+    background: $secondary-color-2-2
+    padding: 30px
+    border-radius: 90px
+    position: relative
+    margin-bottom: 30px
+    @media(max-width: $sm)
+      width: 300px
+
+    // BANNER-PAGE-HEADING::BEFORE,
+    // BANNER-PAGE-HEADING::AFTER
+    // ==================================
+    &::before,
+    &::after
+      content: ""
+      +size(20px)
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+      background: $secondary-color-1-2
+      border-radius: 100%
+      @media(max-width: $sm)
+        display: none
+    &::before
+      left: 40px
+    &::after
+      right: 40px
+
+
+    // BENNER-PAGE-HEADING > H1
+    // ==================================
+    h1
+      font-size: 72px
+      line-height: 72px
+      color: $secondary-color-1-5
+      @media(max-width: $sm)
+        font-size: 60px
+
+      // H1::AFTER
+      // ==================================
+      &::after
+        content: ""
+        +size(calc(100% - 30px))
+        +centering(absolute)
+        border: 2px dashed $secondary-color-1-3
+        border-radius: 90px
+
+  // BANNER-PAGE-BREADCRUMB
+  // ==================================
+  .banner-page-breadcrumb
+    border: 2px dashed $secondary-color-1-1
+    border-radius: 30px
+    display: inline-block
+
+    // BANNER-PAGE-BREADCRUMB > UL
+    // ==================================
+    ul
+      list-style-type: none
+      padding: 0
+      margin: 0
+      display: flex
+      align-items: center
+      justify-content: space-between
+      padding: 10px 20px
+
+      // UL > LI
+      // ==================================
+      & > li
+        margin: 0 5px
+
+      // UL > LI > A
+      // ==================================
+      & > li > a
+        color: $secondary-color-1-4
+        transition: $default-transition
+      & > li > a:hover
+        text-decoration: none
+        color: $secondary-color-2-4
+      & > li > a.active
+        color: $secondary-color-1-5
+        font-weight: 700
+      & > li > a.active:hover
+        color: $secondary-color-2-5
+
+      // UL > LI > SPAN.DOT
+      // ==================================
+      & > li > span.dot
+        display: block
+        background: $secondary-color-1-3
+        +size(10px)
+        border-radius: 100%
+
+  // BANNER-TAGLINE
+  // ==================================
+  .banner-tagline
+    margin-bottom: 30px
+    p
+      font-size: 12px
+      display: inline-block
+      padding: 6px 20px
+      border: 2px dashed $primary-color-3
+      border-radius: 30px
+      color: $secondary-color-1-5
+
+  // BANNER-DESCRIPTION
+  // ==================================
+  .banner-description
+    width: 555px
+    @media(max-width: $lg)
+      width: 100%
+    span
+      color: $secondary-color-1-5

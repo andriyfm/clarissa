@@ -1,0 +1,220 @@
+/* FAMILY-SECTION
+/* ==================================
+#family-section
+  padding: 170px 0
+
+  // FAMILY-SECTION [SMALL DEVICE]
+  // ==================================
+  @media(max-width: $sm)
+    padding: 80px 0 !important
+
+  // FAMILY-SECTION [MEDIUM DEVICE]
+  // ==================================
+  @media(max-width: $md)
+    padding: 100px 0
+
+  // SECTION-HEADER
+  // ==================================
+  .section-header
+    margin-bottom: 0
+
+    // SECTION-HEADER [SMALL DEVICE]
+    // ==================================
+    @media(max-width: $sm)
+      margin-bottom: 0
+
+    // SECTION-HEADER > H2
+    // ==================================
+    h2
+      margin-bottom: 60px
+
+    // SECTION-HEADER > P
+    // ==================================
+    p
+      margin-bottom: 0
+
+  // SECTION BODY
+  // ==================================
+  .section-body
+
+    // SECTION-BODY > [CLASS*='COL-']
+    // ==================================
+    [class*='col-']
+      margin-bottom: 0
+
+
+  // CARD-PROFILE
+  // ==================================
+  .card-profile
+    z-index: 1
+
+    // CARD-PROFILE:HOVER
+    // ==================================
+    &:hover > .card-profile-background
+      background: $secondary-color-1-5
+    &:hover > .card-profile-background::after
+      border-color: $secondary-color-1-4
+    &:hover > .card-profile-content > h3
+      color: $secondary-color-2-1
+    &:hover > .card-profile-content > h6
+      color: $secondary-color-1-3
+    &:hover > .card-profile-content > span.dot
+      background: $secondary-color-1-4
+    &:hover > .card-profile-content > p
+      color: $secondary-color-1-2
+
+  // CARD-PROFILE-BACKGROUND
+  // ==================================
+  .card-profile-background
+    z-index: 2
+    position: absolute
+    left: 50%
+    bottom: 0
+    transform: translate(-50%, 0)
+    background: $secondary-color-2-2
+    width: 95%
+    height: calc(100% - 100px)
+    mask: url('../img/rectangle.svg'), url('../img/elipse.svg'), url('../img/elipse.svg')
+    mask-size: 100%, 100px, 100px
+    mask-position: 0, -50px calc(100% + 50px), calc(100% + 50px) calc(100% + 50px)
+    mask-repeat: repeat, no-repeat, no-repeat
+    mask-composite: source-out
+    transition: $default-transition
+
+    // CARD-PROFILE-BACKGROUND [MEDIUM DEVICE]
+    // ==================================
+    @media(max-width: $md)
+      width: 90%
+
+    // CARD-PROFILE-BACKGROUND::AFTER
+    // ==================================
+    &::after
+      content: ""
+      +size(calc(100% - 60px))
+      background: transparent
+      border: 2px dashed $secondary-color-1-2
+      +centering(absolute)
+      transition: $default-transition
+
+  // CARD-PROFILE-CONTENT
+  // ==================================
+  .card-profile-content
+    z-index: 3
+    position: relative
+    // padding: 0 30px 73px
+    padding: 60px
+
+    // CARD-PROFILE-CONTENT > H3
+    // ==================================
+    h3
+      font-family: $font-base
+      font-weight: 300
+      font-size: 24px
+      letter-spacing: letterSpacing(20)
+      line-height: lineHeight(30px, 24px)
+      color: $primary-color-4
+      margin-bottom: 0
+      transition: $default-transition
+
+    // CARD-PROFILE-CONTENT > H6
+    // ==================================
+    h6
+      font-family: $font-heading
+      font-weight: 400
+      font-size: 24px
+      color: $secondary-color-1-4
+      transition: $default-transition
+
+    // CARD-PROFILE-CONTENT > SPAN.DOT
+    // ==================================
+    span.dot
+      display: inline-block
+      +size(10px)
+      background: $secondary-color-1-2
+      border-radius: 100%
+      margin: 20px 0
+      transition: $default-transition
+
+  // FLOWERS
+  // ==================================
+  .flowers
+    width: 85%
+    height: auto
+    position: absolute
+    left: 50%
+    transform: translate(-50%)
+    filter: grayscale(1)
+    opacity: 0.2
+
+    // FLOWERS [MEDIUM DEVICE]
+    // ==================================
+    @media(max-width: $md)
+      width: 60% !important
+
+    // FLOWERS [LARGE DEVICE]
+    // ==================================
+    @media(max-width: $lg)
+      width: 95%
+
+  // FLOWER-LEFT,
+  // FLOWER RIGHT
+  // ==================================
+  .flower-left,
+  .flower-right
+    width: 160px
+    height: auto
+    transform-origin: center
+    transform: rotate(90deg) rotateX(180deg)
+    position: absolute
+
+    // FLOWER-LEFT > IMG,
+    // FLOWER-RIGHT > IMG
+    // ==================================
+    img
+      width: 100%
+      height: auto
+
+      // FLOWER-LEFT > IMG [SMALL DEVICE]
+      // FLOWER-RIGHT > IMG [SMALL DEVICE]
+      // ==================================
+      @media(max-width: $sm)
+        display: none
+
+  // FLOWER-LEFT
+  // ==================================
+  .flower-left
+    transform: rotate(90deg) rotateX(180deg)
+    left: 0
+
+  // FLOWER-RIGHT
+  // ==================================
+  .flower-right
+    transform: rotate(90deg)
+    right: 0
+
+  // CARD-PROFILE-PHOTO
+  // ==================================
+  .card-profile-photo
+    +size(160px)
+    background: $secondary-color-1-5
+    border-radius: 100%
+    margin: 0 auto 26px
+    overflow: hidden
+    position: relative
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2))
+
+    // CARD-PROFILE-PHOTO::AFTER
+    // ==================================
+    &::after
+      content: ""
+      +size(calc(100% - 15px))
+      background: transparent
+      border: 2px dashed $secondary-color-1-1
+      border-radius: 100%
+      +centering(absolute)
+
+    // CARD-PROFILE-PHOTO > IMG
+    // ==================================
+    img
+      width: 100%
+      height: auto

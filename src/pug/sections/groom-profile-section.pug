@@ -1,0 +1,39 @@
+//- PROFILE-SECTION
+//- ==================================
+section#groom-profile-section
+  
+  //- PROFILE-SECTION-PHOTO
+  //- ==================================
+  .profile-section-photo
+    
+    // the groom photo
+    img(src="img/groom-bg.png", alt="groom photo")
+      
+  .container-fluid    
+
+    .row.align-items-center
+
+      .profile-section-detail.col-sm-5.col-md-12.col-lg-6.col-xl-5.mr-auto.order-2
+        
+        .profile-section-header
+          
+          +section-header('jhon doe', 'the groom')
+          
+        .profile-section-body
+          
+          // profile description
+          p Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris.
+          p Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi.
+          p Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
+          p Aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris egestas quam, ut aliquam massa nisl quis neque. Suspendisse in orci enim.
+        
+      .profile-section-gallery.col-sm-4.col-md-12.col-lg-6.col-xl-4.order-1
+        
+        - var images = ['groom-gallery-1.jpg', 'groom-gallery-2.jpg', 'groom-gallery-3.jpg']
+        each img in images
+          
+
+          .profile-gallery-item.groom-gallery
+            
+            // groom gallery
+            a(href="img/" + img): img(src="img/" + img, alt="gallery photo")

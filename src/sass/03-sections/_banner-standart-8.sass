@@ -1,0 +1,243 @@
+/* BANNER-STANDART-8
+/* ==================================
+#banner-standart-8
+  overflow: hidden
+  background-size: cover
+  background-repeat: no-repeat
+  background-position: center
+  background-attachment: fixed
+
+  // BANNER-STANDART-8::AFTER
+  // ==================================
+  // &::after
+    content: ""
+    +size(100%)
+    background: $primary-color-2
+    +centering(absolute)
+    opacity: 0.9
+
+  // CONTAINER-FLUID
+  // ==================================
+  .container-fluid
+    height: 100vh
+    position: relative
+
+    // CONTAINER-FLUID [MEDIUM DEVICE]
+    // ==================================
+    @media(max-width: $md)
+      height: 700px
+
+  // BANNER-CONTENT
+  // ==================================
+  .banner-content
+    width: 100%
+    +centering(absolute)
+    z-index: 1
+
+  // BANNER-FLOWER
+  // ==================================
+  .banner-flower
+    +size(100%)
+    position: absolute
+    z-index: -1
+
+    // BANNER-FLOWER > IMG
+    // ==================================
+    img
+      +size(300px, auto)
+
+    // BANNER-FLOWER > FLOWER
+    // ==================================
+    .flower
+      position: absolute
+      top: 50%
+      transform: translateY(-50%)
+
+      // BANNER-FLOWER > FLOWER.LEFT
+      // ==================================
+      &.left
+        left: 20%
+        transform: translateY(-50%) rotateX(180deg) rotate(10deg)
+        @media(max-width: $lg)
+          left: 0
+        @media(max-width: $md)
+          left: -15%
+        @media(max-width: $sm)
+          left: -50%
+
+      // BANNER-FLOWER > FLOWER.RIGHT
+      // ==================================
+      &.right
+        right: 20%
+        transform: translateY(-50%) rotate(180deg + 10deg)
+        @media(max-width: $lg)
+          right: 0
+        @media(max-width: $md)
+          right: -15%
+        @media(max-width: $sm)
+          right: -50%
+
+  // BANNER-HEADING
+  // ==================================
+  .banner-heading
+    margin-bottom: 50px
+    text-align: center
+    @media(max-width: $sm)
+      margin-bottom: 30px
+
+    // BANNER-HEADING > H1
+    // ==================================
+    h1
+      font-size: 72px
+      line-height: 72px
+      color: $secondary-color-1-5
+
+  // BANNER-SUB-HEADING
+  // ==================================
+  .banner-sub-heading
+    text-align: center
+    @media(max-width: $sm)
+      margin-bottom: 30px
+
+    // BANNER-SUB-HEADING > H2
+    // ==================================
+    h2
+      font-family: $font-base
+      font-size: 12px
+      letter-spacing: letterSpacing(440)
+      color: $secondary-color-1-2
+      display: inline-block
+      padding: 15px 30px
+      position: relative
+
+      // BANNER-SUB-HEADING::BEFORE,
+      // BANNER-SUB-HEADING::AFTER
+      // ==================================
+      &::before,
+      &::after
+        content: ""
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        +size(10px)
+        background: $secondary-color-1-3
+        border-radius: 100%
+      &::before
+        left: 0
+      &::after
+        right: 0
+
+  // BANNER-PHOTOS
+  // ==================================
+  .banner-photos
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    position: relative
+    width: 350px
+    margin: 0 auto 20px
+    @media(max-width: $sm)
+      margin-bottom: 40px
+
+    // BANNER-PHOTOS::BEFORE
+    // ==================================
+    &::before
+      content: ""
+      +centering(absolute)
+      +size(calc(100% + 120px))
+      background: transparentize($secondary-color-1-4, 0.5)
+      border-radius: 100%
+      z-index: -1
+      @media(max-width: $sm)
+        border: 0
+
+  // BANNER-PHOTO-ICON
+  // ==================================
+  .banner-photo-icon
+    +centering(absolute)
+
+    // BANNER-PHOTO-ICON > IMG
+    // ==================================
+    img
+      +size(80px, auto)
+
+  // BANNER-PHOTO-PROFILE
+  // ==================================
+  .banner-photo-profile
+    +size(160px)
+    overflow: hidden
+    border-radius: 100%
+
+    // BANNER-PHOTO-PROFILE > IMG
+    // ==================================
+    img
+      +size(100%, auto)
+
+  // BANNER-DETAIL
+  // ==================================
+  .banner-detail
+    text-align: center
+    margin-bottom: 30px
+
+    // BANNER-DETAIL > H3
+    // ==================================
+    h3
+      font-size: 26px
+      line-height: 26px
+      color: $primary-color-2
+      margin-bottom: 20px
+
+    // BANNER-DETAIL > P
+    // ==================================
+    p
+      font-size: 12px
+      line-height: lineHeight(20px, 12px)
+      letter-spacing: letterSpacing(200)
+      color: $secondary-color-1-2
+      text-decoration: underline
+      width: 350px
+      margin: 0 auto
+
+  // BANNER-DATE
+  // ==================================
+  .banner-date
+
+    // BANNER-DATE > UL
+    // ==================================
+    ul
+      list-style-type: none
+      width: 150px
+      background: $secondary-color-1-5
+      padding: 10px 20px
+      margin: 0 auto
+      border-radius: 30px
+      display: flex
+      justify-content: center
+      align-items: center
+      position: relative
+
+      // BANNER-DATE > UL::BEFORE
+      // ==================================
+      &::before
+        content: ""
+        +size(calc(100% + 15px))
+        +centering(absolute)
+        border: 2px dashed $secondary-color-1-4
+        border-radius: 30px
+
+      // BANNER-DATE > UL > LI
+      // ==================================
+      li
+        font-size: 18px
+        font-weight: 700
+        line-height: 18px
+        color: $secondary-color-1-2
+
+      // BANNER-DATE > UL > LI > SPAN.DOT
+      // ==================================
+      li > span.dot
+        display: block
+        +size(6px)
+        background: $secondary-color-1-3
+        border-radius: 100%
+        margin: 0 10px

@@ -1,0 +1,25 @@
+// WIDTH AND HEIGHT
+// ==================================
+=size($lebar, $tinggi:null)
+  width: $lebar
+  @if $tinggi == null
+    height: $lebar
+  @else
+    height: $tinggi
+
+// CENTERING ELEMENT
+// ==================================
+=centering($position)
+  position: $position
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+
+// THIS MIXIN USED FOR FINDING AN ELEMENT [DEBUGGIN PURPOSE]
+// ==================================
+=find($warna:null)
+  @if $warna == null
+    $warna: aqua
+  @else
+    $warna: $warna
+  border: 2px dashed $warna

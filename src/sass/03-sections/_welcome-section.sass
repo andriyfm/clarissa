@@ -1,0 +1,69 @@
+/* WELCOME-SECTION
+/* ==================================
+#welcome-section
+  padding: 170px 0
+  position: relative
+  overflow: hidden
+  z-index: 1
+
+  // WELCOME-SECTION [XTRA-SMALL DEVICE]
+  // ==================================
+  @media(max-width: $xs)
+    padding-top: 80px
+    padding-bottom: 80px
+
+  // SECTION-HEADER
+  // ==================================
+  .section-header
+    margin-bottom: 60px
+    text-align: center
+
+  // SECTION-BODY
+  // ==================================
+  .section-body
+    padding: 40px 60px
+    background: $secondary-color-2-2
+    mask: url('../img/rectangle.svg'), url('../img/elipse.svg'), url('../img/elipse.svg')
+    mask-repeat: repeat, no-repeat, no-repeat
+    mask-size: 100%, 100px, 100px
+    mask-position: 0 0, -50px, calc(100% + 50px)
+    mask-composite: source-out
+    position: relative
+    transition: $default-transition
+
+    &:hover
+      background: $secondary-color-1-5
+    &:hover > p
+      color: $secondary-color-1-2
+    &:hover > p > span
+      color:  $secondary-color-2-4
+
+    // SECTION-BODY [SMALL DEVICE]
+    // ==================================
+    @media(max-width: $sm)
+      padding: 30px
+      mask: none
+
+    // SECTION-BODY::AFTER
+    // ==================================
+    &::after
+      content: ""
+      +size(calc(100% - 40px))
+      +centering(absolute)
+      border: 2px dashed $secondary-color-1-2
+
+    // SECTION-BODY > P
+    // ==================================
+    p
+      font-size: 14px
+      line-height: lineHeight(26px, 14px)
+      letter-spacing: letterSpacing(20)
+      color: $paragraph-color
+      margin-bottom: 0
+      transition: $default-transition
+
+    // SECTION-BODY > SPAN
+    // ==================================
+    span
+      color: $secondary-color-1-4
+      transition: $default-transition

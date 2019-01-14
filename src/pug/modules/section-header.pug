@@ -1,0 +1,25 @@
+//- SECTION-HEADER
+//- ==================================
+mixin section-header(h2, h6, img)
+  .section-header
+    img(src="img/flower-bw.png", alt="flower logo")
+      
+    if h6 != null
+      
+      // sub heading section
+      h6.text-capitalize #{h6}
+      
+    else
+      
+      // sub heading section
+      h6.text-capitalize Section Sub Heading
+      
+    if h2 != null
+      
+      // heading section
+      h2.text-capitalize #{h2}
+      
+    else
+      
+      // sub heading section
+      h2.text-capitalize Section Heading

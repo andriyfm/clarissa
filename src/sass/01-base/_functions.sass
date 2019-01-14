@@ -1,0 +1,9 @@
+// PIXEL PERFECT OF LETTER SPACING
+// ==================================
+@function letterSpacing($space)
+  @return $space / 1000 + 0em
+
+// PIXEL PERFECT OF LINE HEIGHT
+// ==================================
+@function lineHeight($lineHeight, $fontSize)
+  @return 100% * ($lineHeight / $fontSize)

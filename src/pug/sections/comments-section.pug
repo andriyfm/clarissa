@@ -1,0 +1,82 @@
+//- COMMENTS-SECTION
+//- ==================================
+section#comments-section
+  
+  //- CONTAINER
+  //- ==================================
+  .container
+    
+    //- COMMENTS-SECTION-HEAD
+    //- ==================================
+    .comments-section-head
+      // comments total
+      h2.text-capitalize 20 comments
+      
+    //- COMMENTS-SECTION-BODY
+    //- ==================================
+    .comments-section-body
+      
+      //- COMMENTS-LIST
+      //- ==================================
+      .comments-list
+        
+        - var comments = [1, 2, 3, 4]
+        each comment in comments
+        
+          //- COMMENTS-LIST-ITEM
+          //- ==================================
+          .comments-list-item
+            
+            //- COMMENTS-LIST-ITEM-HEAD
+            //- ==================================
+            .comments-list-item-head
+              
+              //- COMMENTS-PHOTO
+              //- ==================================
+              .comments-photo
+                // commenter photo
+                img(src="img/family-img-1.jpg", alt="commenter photo")
+                  
+              //- COMMENTS-NAME
+              //- ==================================
+              .comments-name
+                // commenter name
+                h4.text-capitalize: a(href="#" title="commenter name") adam jordan
+                ul.comments-date
+                  // comment date
+                  li.text-capitalize 24 march 2017
+                  li: span.dot
+                  // comment time
+                  li 08:00
+                  
+              //- COMMENTS-REPLY-BTN
+              //- ==================================
+              .comments-reply-btn
+                button.btn.btn-default.text-capitalize replay
+                
+            //- COMMENTS-LIST-ITEM-BODY
+            //- ==================================
+            .comments-list-item-body
+              p Aenean commodo interdum ligula imperdiet dictum. Donec mollis non diam eget condimentum. Aliquam eu eros est. Praesent vulputate sodales magna, egestas blandit mi scelerisque a. Ut commodo venenatis luctus. Aenean commodo interdum ligula imperdiet dictum. Donec mollis non diam eget condimentum. Aliquam eu eros est. Praesent vulputate sodales magna, egestas blandit mi scelerisque a. Ut commodo venenatis luctus.
+             
+    //- COMMENTS-SECTION-FOOT
+    //- ==================================
+    .comments-section-foot
+      h2.text-capitalize leave a comment
+      form
+        .row
+          .form-group.col-lg-4
+            label(for="comment-name").sr-only.text-capitalize your name
+            input(type="text" placeholder="your name").form-control#comment-name
+          .form-group.col-lg-4
+            label(for="comment-email").sr-only.text-capitalize your email
+            input(type="email" placeholder="your email").form-control#comment-email
+          .form-group.col-lg-4
+            label(for="comment-site").sr-only.text-capitalize your website
+            input(type="url" placeholder="your website").form-control#comment-site
+        .row
+          .form-group.col-lg-12
+            label(for="comment-message").sr-only.text-capitalize your messages
+            textarea(placeholder="your messages").form-control
+          .form-group.col-lg-12.text-center
+            button(type="submit").btn.btn-default.text-uppercase submit

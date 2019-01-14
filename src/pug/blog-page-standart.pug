@@ -1,0 +1,102 @@
+extend base/layout
+
+append meta
+  title Blog Page Standart - Clarissa Modern Wedding HTML Template
+  
+append header
+  
+  // NAVBAR SECTION
+  include sections/navbar-blog-section
+  
+  // BANNER SECTION
+  +banner-page('blog page')
+  
+append footer
+  
+  // FOOTER SECTION
+  include sections/footer-section
+  
+  // SOUNDCLOUD PLAYER
+  include modules/soundcloud-player
+  
+append main
+  
+  //- BLOG-POST-STANDART
+  //- ==================================
+  section#blog-page-standart
+    
+    //- CONTAINER
+    //- ==================================
+    .container
+      .row
+        
+        //- MAIN-CONTENT
+        //- ==================================
+        .main-content.col-lg-8
+          
+          - var articles = {1:"we're in malaysia", 2:"please introcudec yourself", 3:"i know you know me, mam!"}
+          each title, index in articles
+          
+            article
+              .article-cover
+                img(src="img/blog-img-" + index + ".jpg", alt="blog cover")
+              .article-head
+                ul.blog-date
+                  li.text-uppercase 24
+                  li.text-uppercase mar
+                div.blog-name
+                  ul.categories
+                    li: a(href="#") wedding     
+                    li: span.dot      
+                    li: a(href="#") photography           
+                  h1.text-capitalize: a(href="blog-post.html").title #{title}
+                div.blog-comment
+                  p.text-capitalize 20 comments
+              .article-body
+                p.description Phasellus venenatis tortor non lectus semper faucibus. Proin sit amet erat sed odio auctor sodales in sit amet magna. Pellentesque maximus accumsan enim et sagittis. id, sollicitudin vel magna. Suspendisse quis tortor ac ex commodo elementum ut sed sem.
+                a.btn.btn-default(href="blog-post-standart.html").text-capitalize read more
+          
+          //- section.blog-pagination
+            ul
+              - var pageNums = [1, 2, 3, 4, 5]
+              each num in pageNums
+                li: a(href="#")= num
+          
+        //- ASIDE-CONTENT
+        //- ==================================
+        .aside-content.col-lg-4
+          section.search-bar
+            h4.text-capitalize search
+            form
+              .form-group
+                label(for="search").sr-only.text-capitalize search anything here...
+                input(type="text" placeholder="search anything here ...").form-control#search
+              button(type="submit").btn.btn-default.text-capitalize search
+              
+          section.categories
+            h4.text-capitalize categories
+            ul
+              - var lists = ['story', 'traveling', 'photos', 'uncategorize']
+              each list in lists
+                li: a(href="#").text-capitalize= list
+                
+          section.popular-posts
+            h4.text-capitalize popular posts
+            .popular-post-lists
+              
+              - var posts = {1:"we're in malaysia", 2:"please introduce yourself", 3:"i know you know me, mam!"}
+              each post, index in posts
+              
+                .popular-post-item
+                  .popular-post-thumbnail
+                    img(src="img/blog-thumbnail-img-" + index + ".jpg", alt="post thumbnail")
+                  .popular-post-detail
+                    h6.text-capitalize 20 march 2017
+                    h5.text-capitalize: a(href="#") #{post}
+                    
+          section.tags
+            h4.text-capitalize tags
+            ul
+              - var tags = ['friends', 'wedding', 'photo', 'white', 'traveling', 'moment', 'colorfull']
+              each tag in tags
+                li: a(href="#" title=tag) #{tag}

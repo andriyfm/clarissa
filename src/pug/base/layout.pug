@@ -1,0 +1,44 @@
+include variables
+include ../modules/modules
+
+doctype
+html(lang='en')
+  head
+    block meta
+      meta(charset='utf-8')
+      meta(http-equiv='X-UA-Compatible', content='IE=edge')
+      meta(name='viewport', content='width=device-width, initial-scale=1')
+      meta(name='description', content=pageDescription)
+      meta(name='author', content=pageAuthor)
+    block style
+      link(href=bootstrapCSS, rel='stylesheet')
+      link(href=ionicons, rel='stylesheet')
+      link(href=fontFamily1, rel='stylesheet')
+      link(href=fontFamily2, rel='stylesheet')
+      link(href=magnificPopupCSS, rel='stylesheet')
+      link(href=owlCarouselCSS, rel='stylesheet')
+      link(href=owlCarouselThemeCSS, rel='stylesheet')
+      link(href=mainCSS, rel='stylesheet')
+    block support
+      // HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+      //if lt IE 9
+      script(src='https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js')
+      script(src='https://oss.maxcdn.com/respond/1.4.2/respond.min.js')
+
+  body
+    //- block preload
+    header
+      block header
+    main
+      block main
+    footer
+      block footer
+    block script
+      script(src=jqueryJS)
+      script(src=popperJS)
+      script(src=bootstrapJS)
+      script(src=scrollToJS)
+      script(src=localScrollJS)
+      script(src=magnificPopUpJS)
+      script(src=owlCarouselJS)
+      script(src=mainJS)

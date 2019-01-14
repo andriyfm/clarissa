@@ -1,0 +1,81 @@
+/* GALLERY-SECTION
+/* ==================================
+#gallery-section
+
+  .container-fluid
+    padding: 0
+
+  // GALLERY-SECTION-ITEM
+  // ==================================
+  .gallery-section-item
+    overflow: hidden
+    width: 100%
+    height: 400px
+    background: $primary-color-1
+    position: relative
+
+    // GALLLERY-SECTION-ITEM:HOVER GALLERY-SECTION-DETAIL
+    // ==================================
+    &:hover > .gallery-section-detail
+      transform: translate(-50%, -50%) scale(1)
+
+    // GALLLERY-SECTION-ITEM:HOVER IMG
+    // ==================================
+    &:hover > img
+      filter: blur(2px)
+
+    // GALLERY-SECTION-ITEM::AFTER
+    // ==================================
+    &::after
+      content: ""
+      +size(calc(100% - 60px))
+      +centering(absolute)
+      border: 2px dashed $secondary-color-1-2
+
+    // GALLERY-SECTION-ITEM > IMG
+    // ==================================
+    img
+      width: 110%
+      height: auto
+      +centering(absolute)
+      transition: all 200ms ease-out
+
+  // GALLERY-SECTION-DETAIL
+  // ==================================
+  .gallery-section-detail
+    +size(calc(100% - 90px), auto)
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%) scale(0)
+    text-align: center
+    background: $secondary-color-2-2
+    padding: 30px
+    transition: all 200ms ease-in
+    mask: url('../img/rectangle.svg'), url('../img/elipse.svg'), url('../img/elipse.svg'), url('../img/elipse.svg'), url('../img/elipse.svg')
+    mask-composite: source-out
+    mask-repeat: repeat, no-repeat, no-repeat, no-repeat, no-repeat
+    mask-size: 100%, 100px, 100px, 100px, 100px
+    mask-position: 0 0, -50px -50px, calc(100% + 50px) -50px, calc(100% + 50px) calc(100% + 50px), -50px calc(100% + 50px)
+
+  // SECTION-HEADER
+  // ==================================
+  .section-header
+    margin-bottom: 30px
+
+    // SECTION-HEADER > H6
+    // ==================================
+    h6
+      font-size: 24px
+      line-height: 24px
+
+    // SECTION-HEADER > H2
+    // ==================================
+    h2
+      font-size: 24px
+
+    // SECTION-HEADER > IMG
+    // ==================================
+    img
+      opacity: 0.2
+      +size(90px, auto)
